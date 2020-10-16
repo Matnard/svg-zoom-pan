@@ -17,3 +17,22 @@ svg {
   height: 75vh;
   background-color: dimgrey;
 }
+
+canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+foreignObject div {
+  width: 100%;
+  padding-top: 73.52%;
+  position: relative;
+}
+
+foreignObject canvas {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}

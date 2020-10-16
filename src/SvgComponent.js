@@ -1,5 +1,6 @@
 import React, { forwardRef } from "react";
 import styled from "styled-components";
+import Waves from "./Waves";
 
 const G = styled.g`
   transition: transform 0.6s;
@@ -31,6 +32,9 @@ const SvgComponent = forwardRef((props, ref) => {
         ref={ref}
         id="main-group"
       >
+        <foreignObject x="0" y="0" width="100%" height="100%">
+          <Waves />
+        </foreignObject>
         <g>
           <path
             className="prefix__st1"
