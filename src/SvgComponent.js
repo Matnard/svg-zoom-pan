@@ -8,6 +8,10 @@ const G = styled.g`
     translate(${({ tx, ty }) => `${tx}px, ${ty}px`});
 `;
 
+const MarkerG = styled(G)`
+  transition: none;
+`;
+
 const SvgComponent = forwardRef((props, ref) => {
   return (
     <svg
@@ -100,7 +104,7 @@ const SvgComponent = forwardRef((props, ref) => {
               d="M1422.7 620.4s17.7 4.9 18.7 17.3c.3 3.8 9.4 5.4 11.1 10.6 3.5 11.6 2.4 36.6-1.1 43-5 9.4-16.5 32.8-1.6 37.6 9.4 3 14-7.7 21-19.8 4.7-8.3 12.8-24.1 18.5-26.3 5.3-2.1-2.4-19.5-12.7-29.9-2.6-2.6-9.4-4.4-12.9-10.5-2.5-4.5-1.4-13-3.9-17.3-8-13.7-27-23.5-30.8-22.4-6.5 1.9-28.2-1-25.2 10.6 1.6 6.8 12.3 3 18.9 7.1z"
             />
           </g>
-          {/* <g id="prefix__Areas_1_">
+          <g id="prefix__Areas_1_">
             <g id="prefix__Outback_NSW">
               <path
                 id="prefix__Corner_Country_Area"
@@ -416,10 +420,10 @@ const SvgComponent = forwardRef((props, ref) => {
                 d="M1172.3 667.9c-8.1-7.2-13.4-9-14.3-11.4-1.5.3-7.2 1.6-8.8 4.8-1.8 3.7-.1 12 1.5 13.3s2.4 4 0 7.3-5.8 6.1-7.3 7.3-9.6-.6-8.9 5.9c0 0 1.5 3.3 2.4 5 .9 1.6 3.4 8.4 2.4 10.6-1 2.3-.8 4.4-.8 4.4s-9.6-4-11.3-2.5c-1.7 1.5-2.3 1.4-4.8 1.4-1.4 0-3.6-.7-5.1-1.2 0 .1-.1.1-.1.2-.7 1.2-2.3 1.7-4.4 1.9.3 3.5.9 6.9 1.4 9.8 1.4 7.2 11.1 16.4 28.6 27.5 5.3 3.4 9.8 5 13.3 5.7 9.7-13.9 15.7-28.8 24-42.5 5.3-8.6 12.2-24.6 19.1-40.7-6.5.1-19.7-.5-26.9-6.8z"
               />
             </g>
-          </g>*/}
+          </g>
         </g>
       </G>
-      <G tx={props.tx} ty={props.ty} scale={1}>
+      <MarkerG tx={props.tx} ty={props.ty} scale={1}>
         <circle
           cx={props.cx}
           cy={props.cy}
@@ -428,7 +432,7 @@ const SvgComponent = forwardRef((props, ref) => {
           stroke-width="1"
           fill="red"
         />
-      </G>
+      </MarkerG>
     </svg>
   );
 });

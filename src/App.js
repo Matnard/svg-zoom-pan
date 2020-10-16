@@ -17,7 +17,8 @@ function App() {
   const [bboxes, setBboxes] = useState([]);
   useEffect(() => {
     const bboxes = Array.prototype.slice
-      .call(mainGroup.current.querySelectorAll("#prefix__Regions path"))
+      //.call(mainGroup.current.querySelectorAll("#prefix__Regions path"))
+      .call(mainGroup.current.querySelectorAll("#prefix__Areas_1_ path"))
       .map((el) => ({
         id: el.id,
         bbox: el.getBBox(),
@@ -43,7 +44,14 @@ function App() {
 
           newData.cx = bbox.bbox.x + bbox.bbox.width / 2;
           newData.cy = bbox.bbox.y + bbox.bbox.height / 2;
-          newData.scale = 7;
+
+          if (bbox.bbox.height > bbox.bbox.width) {
+            newData.scale = 1272.6 / bbox.bbox.height;
+          } else {
+            newData.scale = 1730.9 / bbox.bbox.width;
+          }
+
+          newData.scale *= 0.85;
         }
       }
 
